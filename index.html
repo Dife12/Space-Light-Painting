@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字光绘</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+</head>
+<body>
+    <video id="video" playsinline autoplay style="display: none;"></video>
+    
+    <div id="controls" style="position: absolute; top: 20px; left: 20px; z-index: 100; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px;">
+        <h3 style="color: white; margin: 0 0 10px 0;">Brush Color</h3>
+        <div style="display: flex; gap: 5px;">
+            <button onclick="setBrushColor(0xaa00ff)" style="background: #aa00ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setBrushColor(0xff0000)" style="background: #ff0000; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setBrushColor(0x00ff00)" style="background: #00ff00; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setBrushColor(0x0000ff)" style="background: #0000ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setBrushColor(0xffff00)" style="background: #ffff00; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+        </div>
+    </div>
+    
+    <script defer src="main.js"></script>
+</body>
+</html>
