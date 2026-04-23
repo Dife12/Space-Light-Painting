@@ -21,13 +21,13 @@
     <video id="video" playsinline autoplay style="display: none;"></video>
     
     <div id="controls" style="position: absolute; top: 20px; left: 20px; z-index: 100; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px;">
-        <h3 style="color: white; margin: 0 0 10px 0;">Brush Color</h3>
-        <div style="display: flex; gap: 5px;">
-            <button onclick="setBrushColor(0xaa00ff)" style="background: #aa00ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
-            <button onclick="setBrushColor(0xff0000)" style="background: #ff0000; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
-            <button onclick="setBrushColor(0x00ff00)" style="background: #00ff00; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
-            <button onclick="setBrushColor(0x0000ff)" style="background: #0000ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
-            <button onclick="setBrushColor(0xffff00)" style="background: #ffff00; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+        <h3 style="color: white; margin: 0 0 10px 0;">Drawing Controls</h3>
+        <button onclick="clearAllTrails()" style="background: #ff0000; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin-right: 10px;">Clear All</button>
+        <div style="display: flex; gap: 5px; margin-top: 10px;">
+            <button onclick="setTrailColor(0xaa00ff)" style="background: #aa00ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setTrailColor(0x00ffff)" style="background: #00ffff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setTrailColor(0xff00ff)" style="background: #ff00ff; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
+            <button onclick="setTrailColor(0xffff00)" style="background: #ffff00; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%;"></button>
         </div>
     </div>
     
