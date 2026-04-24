@@ -33,12 +33,12 @@ scene.add(indexFinger);
 indexFinger.visible = false;
 
 // Trail settings
-const CYAN = 0x00ffff;
+let currentColor = 0x00ffff;
 let isDrawing = false;
 let currentTrail = null;
 let trailPoints = [];
 const trails = [];
-const PINCH_THRESHOLD = 0.4; // Increased threshold for better usability
+const PINCH_THRESHOLD = 0.5; // Increased threshold for better usability
 
 // Create hand skeleton lines
 const handLines = new THREE.LineSegments(
@@ -163,7 +163,7 @@ hands.onResults((results) => {
                     
                     // Create new trail material (always cyan)
                     const trailMaterial = new THREE.MeshBasicMaterial({
-                        color: CYAN,
+                        color: currentColor,
                         transparent: true,
                         opacity: 0.8
                     });
@@ -255,7 +255,10 @@ window.clearAllTrails = () => {
 
 // Set trail color
 window.setTrailColor = (color) => {
-    trailColor = color;
+    currentColor = color;
+    // Update finger colors too
+    thumb.material.color.setHex(color);
+    indexFinger.material.color.setHex(color);
 };
 
 // Handle window resize
